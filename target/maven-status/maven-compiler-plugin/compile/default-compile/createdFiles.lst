@@ -1,0 +1,16 @@
+be\pxl\services\crm\controller\request\SupportTicketUpdateRequest.class
+be\pxl\services\crm\controller\request\CustomerUpdateRequest.class
+be\pxl\services\crm\domain\Customer.class
+be\pxl\services\crm\domain\SupportTicket.class
+be\pxl\services\crm\controller\dto\SupportTicketDto.class
+be\pxl\services\crm\services\SupportTicketService.class
+be\pxl\services\crm\controller\CustomerController.class
+be\pxl\services\crm\controller\request\SupportTicketCreateRequest.class
+be\pxl\services\crm\repository\CustomerRepository.class
+be\pxl\services\crm\repository\SupportTicketRepository.class
+be\pxl\services\crm\CrmApplication.class
+be\pxl\services\crm\controller\dto\CustomerDto.class
+be\pxl\services\crm\domain\TicketStatus.class
+be\pxl\services\crm\services\CustomerService.class
+be\pxl\services\crm\controller\SupportTicketController.class
+be\pxl\services\crm\controller\request\CustomerCreateRequest.class

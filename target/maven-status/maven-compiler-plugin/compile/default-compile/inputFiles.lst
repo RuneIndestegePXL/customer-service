@@ -1,0 +1,16 @@
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\CustomerController.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\dto\CustomerDto.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\dto\SupportTicketDto.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\request\CustomerCreateRequest.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\request\CustomerUpdateRequest.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\request\SupportTicketCreateRequest.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\request\SupportTicketUpdateRequest.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\controller\SupportTicketController.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\CrmApplication.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\domain\Customer.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\domain\SupportTicket.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\domain\TicketStatus.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\repository\CustomerRepository.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\repository\SupportTicketRepository.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\services\CustomerService.java
+C:\Users\runei\Documents\stage\code\usecase\customer-service\src\main\java\be\pxl\services\crm\services\SupportTicketService.java
