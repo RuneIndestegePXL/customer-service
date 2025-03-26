@@ -8,6 +8,7 @@ import be.pxl.services.crm.domain.TicketStatus;
 import be.pxl.services.crm.repository.SupportTicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,20 +22,24 @@ public class SupportTicketService {
         this.supportTicketRepository = supportTicketRepository;
     }
 
+    @Transactional
     public Optional<SupportTicket> getSupportTicket(Long id) {
         return supportTicketRepository.findById(id);
     }
 
+    @Transactional
     public List<SupportTicket> listSupportTickets() {
         return supportTicketRepository.findAll();
     }
 
+    @Transactional
     public SupportTicketDto createSupportTicket(SupportTicketCreateRequest request) {
         SupportTicket ticket = new SupportTicket(request.title(), request.description());
 
         return SupportTicketMapperToDto(supportTicketRepository.save(ticket));
     }
 
+    @Transactional
     public SupportTicketDto updateSupportTicket(Long id, SupportTicketUpdateRequest ticketDetails) {
         return SupportTicketMapperToDto(supportTicketRepository.findById(id)
                 .map(ticket -> {
@@ -45,6 +50,8 @@ public class SupportTicketService {
                 }).orElse(null));
     }
 
+
+    @Transactional
     public boolean deleteSupportTicket(Long id) {
         if (supportTicketRepository.existsById(id)) {
             supportTicketRepository.deleteById(id);
