@@ -1,5 +1,6 @@
 package be.pxl.services.crm.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,12 +21,12 @@ public class Customer {
     private String zipCode;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    @OneToMany
-    @JoinColumn(name = "customer_id")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<SupportTicket> supportTickets;
 
-    @OneToMany
-    @JoinColumn(name = "customer_id")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<SupportTicket> closedSupportTickets;
 
     public Customer() {}

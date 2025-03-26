@@ -1,5 +1,6 @@
 package be.pxl.services.crm.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -16,6 +17,11 @@ public class SupportTicket {
     private TicketStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
 
     public SupportTicket() {
     }
