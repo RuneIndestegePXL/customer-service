@@ -3,8 +3,10 @@ package be.pxl.services.crm.services;
 import be.pxl.services.crm.controller.dto.SupportTicketDto;
 import be.pxl.services.crm.controller.request.SupportTicketCreateRequest;
 import be.pxl.services.crm.controller.request.SupportTicketUpdateRequest;
+import be.pxl.services.crm.domain.Customer;
 import be.pxl.services.crm.domain.SupportTicket;
 import be.pxl.services.crm.domain.TicketStatus;
+import be.pxl.services.crm.repository.CustomerRepository;
 import be.pxl.services.crm.repository.SupportTicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +19,11 @@ import java.util.Optional;
 public class SupportTicketService {
 
     private final SupportTicketRepository supportTicketRepository;
+    private final CustomerRepository customerRepository;
 
-    public SupportTicketService(SupportTicketRepository supportTicketRepository) {
+    public SupportTicketService(SupportTicketRepository supportTicketRepository, CustomerRepository customerRepository) {
         this.supportTicketRepository = supportTicketRepository;
+        this.customerRepository = customerRepository;
     }
 
     @Transactional
@@ -34,7 +38,11 @@ public class SupportTicketService {
 
     @Transactional
     public SupportTicketDto createSupportTicket(SupportTicketCreateRequest request) {
+        Customer customer = customerRepository.findById(request.customerId()) // Ensure customer exists
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
+
         SupportTicket ticket = new SupportTicket(request.title(), request.description());
+        ticket.setCustomer(customer);
 
         return SupportTicketMapperToDto(supportTicketRepository.save(ticket));
     }

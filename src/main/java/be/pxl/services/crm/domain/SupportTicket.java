@@ -50,6 +50,13 @@ public class SupportTicket {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
 
     public String getTitle() {
         return title;
