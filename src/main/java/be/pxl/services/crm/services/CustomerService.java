@@ -7,8 +7,8 @@ import be.pxl.services.crm.controller.request.CustomerUpdateRequest;
 import be.pxl.services.crm.domain.Customer;
 import be.pxl.services.crm.domain.SupportTicket;
 import be.pxl.services.crm.repository.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,10 +21,11 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
+    @Transactional
     public Optional<CustomerDto> getCustomer(Long id) {
         return customerRepository.findById(id).map(CustomerService::CustomerMapperToDto);
     }
-
+    @Transactional
     public List<CustomerDto> listCustomers() {
         return customerRepository.findAll().stream().map(CustomerService::CustomerMapperToDto).toList();
     }
@@ -42,7 +43,7 @@ public class CustomerService {
         Customer savedCustomer = customerRepository.save(newCustomer);
         return CustomerMapperToDto(savedCustomer);
     }
-
+    @Transactional
     public CustomerDto updateCustomer(Long id, CustomerUpdateRequest customerDetails) {
         return CustomerMapperToDto(customerRepository.findById(id)
                 .map(customer -> {
